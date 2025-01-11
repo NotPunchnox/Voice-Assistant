@@ -1,7 +1,6 @@
 import pyaudio
 import json
 import requests
-import pyttsx3
 from vosk import Model, KaldiRecognizer
 
 # Chemin du modèle français Vosk
@@ -10,10 +9,6 @@ model_path = "ressources/regonization/vosk-model-small-fr-0.22"
 # Initialiser le modèle Vosk
 model = Model(model_path)
 recognizer = KaldiRecognizer(model, 16000)
-
-# Initialiser le moteur TTS
-engine = pyttsx3.init()
-engine.setProperty('voice', 'FR-fr')
 
 # Fonction pour traiter l'entrée vocale
 def process_audio():

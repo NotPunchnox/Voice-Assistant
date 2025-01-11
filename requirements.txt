@@ -1,0 +1,5 @@
+vosk
+requests
+json
+pyaudio
+pydub
