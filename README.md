@@ -29,11 +29,11 @@ Le projet est conçu pour fonctionner sur un système Windows combiné à une VM
 
 ## Technologies utilisées
 
-Le projet repose sur plusieurs outils open source hautement optimisés :
+Le projet repose sur plusieurs outils open source assez bien optimisés :
 1. **[Vosk](https://github.com/alphacep/vosk)** : Reconnaissance vocale en temps réel.
 2. **[Piper](https://github.com/rhasspy/piper)** : Synthèse vocale légère et efficace.
-3. **[RKLLAMA](https://github.com/notpunchnox/rkllama)** : Exécution de modèles IA sur le NPU **rk3588s**.
-
+3. **[RKLLAMA](https://github.com/notpunchnox/rkllama)** : Exécution de modèles LLM sur le NPU **rk3588s**.
+4. **[Ollama](https://github.com/ollama/)** : Exécution de modèles LLM sur CPU et GPU.
 ---
 
 ## Installation
