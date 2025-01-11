@@ -8,7 +8,7 @@ from pydub.playback import play
 text = ""
 
 # Boucle principale
-while len(text) < 1:
+while True:
 
     # Traiter l'entrée vocale
     text = process_audio()
