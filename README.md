@@ -7,7 +7,7 @@ L'idée est de développer un assistant vocal optimisé pour des machines à fai
 2. **Compréhension et rédaction par IA** pour interpréter et répondre de manière intelligente.
 3. **Synthèse vocale** pour fournir des réponses audibles en temps réel.
 
-La synthèse vocale se fait en temps réel ( chaque fin de phrase/virgule... )
+La synthèse vocale se fait en temps réel ( chaque fin de phrase/virgule... ), pour se faire la requête vers Ollama a été mise en mode stream.
 
 ---
 
