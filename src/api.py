@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Punchnox
+# https://github.com/notpunchnox
+# LICENSE MIT
+
 from flask import Flask, request, jsonify, send_file
 from piper.voice import PiperVoice
 import wave

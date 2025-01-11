@@ -1,5 +1,4 @@
-
-# By notpunchnox
+# Copyright (c) 2025 Punchnox
 # https://github.com/notpunchnox
 # LICENSE MIT
 

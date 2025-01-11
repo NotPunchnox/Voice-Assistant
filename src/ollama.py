@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Punchnox
+# https://github.com/notpunchnox
+# LICENSE MIT
+
 import requests
 from io import BytesIO
 from pydub import AudioSegment
