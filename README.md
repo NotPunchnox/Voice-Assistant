@@ -2,10 +2,12 @@
 
 ## Objectif du projet
 
-L'idée est de développer un assistant vocal optimisé pour des machines à faible performance. Cet assistant doit inclure :
+L'idée est de développer un assistant vocal optimisé pour des machines à faible performance. Cet assistant inclus:
 1. **Reconnaissance vocale** pour comprendre les commandes.
 2. **Compréhension et rédaction par IA** pour interpréter et répondre de manière intelligente.
-3. **Synthèse vocale** pour fournir des réponses audibles.
+3. **Synthèse vocale** pour fournir des réponses audibles en temps réel.
+
+La synthèse vocale se fait en temps réel ( chaque fin de phrase/virgule... )
 
 ---
 
@@ -56,9 +58,18 @@ python3 ./src/api.py
 
 ### Étape 2 : Lancer le client
 Démarrez l'application principale avec :
+
+* Paramètres:
+    --verbose
+    --cli 
+    --model
+
 ```bash
 python3 ./app.py
 ```
+
+#### CLI mode
+![Image](./ressources/images/cli-mode.png)
 
 ### Étape 3 : Phase de test
 Pour tester la fonctionnalité de synthèse vocale, exécutez :

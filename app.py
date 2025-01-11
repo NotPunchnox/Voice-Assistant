@@ -24,4 +24,4 @@ while True:
         print(f"\nQuestion reconnue: {text}")
 
         # Appel à l'API Ollama pour générer la réponse et activer le tts en temps réel
-        responseAI = ollama.Generate(text, options={ "model": model })
+        responseAI = ollama.Generate(text, args, options={ "model": model })
