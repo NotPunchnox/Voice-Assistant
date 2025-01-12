@@ -1,4 +1,6 @@
 # Voice Assistant
+**Windows + WSL branch**
+
 
 ## Objectif du projet
 
