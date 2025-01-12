@@ -7,9 +7,6 @@ import os
 from pydub import AudioSegment
 from pydub.playback import play
 
-# Installer pydub avec : pip install pydub
-# (et ffmpeg pour lire les fichiers audio)
-
 url = "http://127.0.0.1:5000/synthesize"
 
 while True:

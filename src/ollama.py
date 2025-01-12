@@ -3,27 +3,8 @@
 # LICENSE MIT
 
 import requests
-from io import BytesIO
-from pydub import AudioSegment
-from pydub.playback import play
 import json
-
-args = ""
-
-def sendTTS(content, args):
-    response = requests.post("http://127.0.0.1:5000/synthesize", json={"text": content})
-
-    if args.verbose:
-        print(f"Sending request to TTS API with text: {content}") 
-
-    if response.status_code == 200:
-        # Lecture de l'audio
-        audio = AudioSegment.from_file(BytesIO(response.content))
-        play(audio)
-        print("Audio played successfully.")
-    else:
-        print(f"Error: {response.status_code} - {response.json()}")
-
+from .tts import sendTTS
 
 def Generate(prompt, args, options):
     # Si l'url de l'API n'est pas spécifié alors mettre l'url par défaut
@@ -44,7 +25,7 @@ def Generate(prompt, args, options):
             # Initialiser une variable pour construire progressivement le message
             content = ""
             
-            # Itérer sur chaque partie du flux (stream)
+            # Lire chaque ligne du flux
             for chunk in response.iter_lines():
                 if chunk:
                     # Décoder chaque ligne en UTF-8
