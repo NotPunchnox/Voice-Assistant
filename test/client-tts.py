@@ -2,31 +2,29 @@
 # https://github.com/notpunchnox
 # LICENSE MIT
 
+# Import libraries
 import requests
-import os
+from io import BytesIO
 from pydub import AudioSegment
 from pydub.playback import play
+from piper.voice import PiperVoice
+import wave
+import os
 
-url = "http://127.0.0.1:5000/synthesize"
+model = "./ressources/voice/fr_FR-tom-medium.onnx"
+voice = PiperVoice.load(model)
+
+def sendTTS(content):
+    output_file = "output.wav"
+    
+    with wave.open(output_file, "w") as wav_file:
+        audio = voice.synthesize(content, wav_file)
+
+        final_audio = AudioSegment.from_file(BytesIO(audio))
+        play(final_audio)
+
 
 while True:
+    txt = input("you: ")
 
-    data = {"text": input("Vous: ")}
-
-    response = requests.post(url, json=data)
-
-    if response.status_code == 200:
-        # Sauvegarder temporairement le fichier audio
-        temp_file = "temp_output.wav"
-        with open(temp_file, "wb") as f:
-            f.write(response.content)
-        
-        # Lire l'audio
-        audio = AudioSegment.from_file(temp_file)
-        play(audio)
-        
-        # Supprimer le fichier temporaire
-        os.remove(temp_file)
-        print("Audio lu et supprimé avec succès.")
-    else:
-        print("Erreur :", response.json())
+    sendTTS(txt)
