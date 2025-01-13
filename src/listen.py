@@ -2,7 +2,6 @@
 # https://github.com/notpunchnox
 # LICENSE MIT
 
-import pyaudio
 import json
 import requests
 from vosk import Model, KaldiRecognizer
@@ -16,6 +15,8 @@ recognizer = KaldiRecognizer(model, 16000)
 
 # Fonction pour traiter l'entrée vocale
 def process_audio():
+    import pyaudio
+    
     audio = pyaudio.PyAudio()
     stream = audio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=4000)
     stream.start_stream()

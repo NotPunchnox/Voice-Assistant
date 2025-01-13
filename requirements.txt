@@ -2,3 +2,5 @@ vosk
 requests
 pyaudio
 pydub
+piper-tts
+onnxruntime
