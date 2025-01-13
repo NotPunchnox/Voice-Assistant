@@ -8,9 +8,19 @@ from io import BytesIO
 from pydub import AudioSegment
 from pydub.playback import play
 
-# Fonction pour lancer le text to speech
+from piper.voice import PiperVoice
+import wave
+import os
+
+# Charger le modèle Piper
+model = "./ressources/voice/fr_FR-tom-medium.onnx"
+voice = PiperVoice.load(model)
+
+# Fonction pour lancer la synthèse vocale
 def sendTTS(content, args):
-    response = requests.post("http://127.0.0.1:5000/synthesize", json={"text": content})
+    output_file = "output.wav"
+    with wave.open(output_file, "w") as wav_file:
+        audio = voice.synthesize(text, wav_file)
 
     if args.verbose:
         print(f"Sending request to TTS API with text: {content}") 
